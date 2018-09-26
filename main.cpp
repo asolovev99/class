@@ -10,12 +10,10 @@ class String
             lenght = 0;
         }
         String (char* copy){
-            int i;
-            lenght = sizeof (*copy) / sizeof (copy[0]);
-            data = new char[sizeof copy / sizeof copy[0]+2];
-            for (i = 0; i <= sizeof copy / sizeof copy[0]; i++){
-
-            }
+            lenght = 1;
+            data = new char[2];
+            data[0] = *copy;
+            data[1] = '\0';
         }
         String (String& copy)
         {
@@ -25,7 +23,6 @@ class String
         ~String()
         {
             delete data;
-            delete lenght;
         }
         String& operator=(String &orig)
         {
@@ -52,6 +49,5 @@ int main()
     delete a;
     g = f;
     god = f;
-
     return 0;
 }
